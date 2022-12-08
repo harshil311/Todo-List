@@ -1,0 +1,26 @@
+<h4>Add a Todo</h4>
+<div class="my-3">
+  <form name="form" #myForm="ngForm" (ngSubmit)="onSubmit()  ; myForm.resetForm()" novalidate>
+    <div class="form-group">
+      <label for="title">Todo Title</label>
+      <input type="text" required [(ngModel)]="title" class="form-control" id="title" name="title">
+      
+        
+      <!-- <div ng-show="form.$submitted || form.title.$touched">
+      <div ng-show="form.title.$error.required">Enter name first</div></div> -->
+      <!--[class.is-invalid]="myForm.invalid && myForm.touched"-->
+    </div>
+
+    <div class="form-group">
+      <label for="desc" class="form-label">todo desc</label>
+      <input type="text" class="form-control" name="desc" id="desc" [(ngModel)]="desc">
+    </div>
+
+    <button type="submit" [disabled]="!title || !desc" class="btn btn-sm btn-primary my-3">
+
+      Add Todo
+    </button>
+
+  </form>
+</div>
+<!-- [disabled]="!title || !desc" -->
